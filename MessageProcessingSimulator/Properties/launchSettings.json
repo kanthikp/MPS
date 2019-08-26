@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MessageProcessingSimulator": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "MessageConsumerIntervalInMilliSecs": "20",
+        "MessageGeneratorIntervalInMilliSecs": "10",
+        "App:MessageTypesCount": "26"
+      }
+    }
+  }
+}

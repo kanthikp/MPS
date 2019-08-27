@@ -27,6 +27,7 @@ namespace MessageProcessingSimulator
             lock (_lockObject)
             {
                 _fileLogger.WriteLogAsync(message).GetAwaiter().GetResult();
+                Task.Delay(_appOptions.MessageConsumerIntervalInMilliSecs);
                 return Task.CompletedTask;
             }
         }

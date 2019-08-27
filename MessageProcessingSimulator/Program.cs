@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 
 using Microsoft.Extensions.Configuration;
@@ -14,8 +15,14 @@ namespace MessageProcessingSimulator
         {
             var host = CreateHostBuilder(args)
                 .Build();
-
-            await host.RunAsync();
+            try
+            {
+                await host.RunAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception Occured.{0}", ex.Message);
+            }
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>

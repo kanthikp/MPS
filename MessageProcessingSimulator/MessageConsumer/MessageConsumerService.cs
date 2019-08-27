@@ -48,8 +48,15 @@ namespace MessageProcessingSimulator
                         _logger.LogInformation($"Queuing Message: {message.SequenceNumber} created: {message.Created} of Type: {message.Type}");
 
                         var messageConsumer = _messageConsumerFactory.GetForType(message.Type);
+                        try
+                        {
+                            await messageConsumer.ProcessAsync(message);
+                        }
+                        catch
+                        {
+                            throw;
 
-                        await messageConsumer.ProcessAsync(message);
+                        }
                     }
                 }
             }

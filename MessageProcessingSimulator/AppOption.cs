@@ -6,6 +6,6 @@
         public int MessageGeneratorIntervalInMilliSecs { get; set; } = 10;
         public int MessageConsumerIntervalInMilliSecs { get; set; } = 20;
 
-        public string LogFileDirectory { get; set; } = @"../../../../Logfiles";
+        public string LogFileDirectory { get; set; } = @"../../../Logfiles";
     }
 }
